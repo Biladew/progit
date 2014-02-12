@@ -12,10 +12,12 @@ If you are a graphic or web designer and want to keep every version of an image 
 
 Many people’s version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they’re clever). This approach is very common because it is so simple, but it is also incredibly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to.
 
-To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control (see Figure 1-1).
+To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control (see <a data-type="xref" href="#figure1-1"/>).
 
-Insert 18333fig0101.png
-Figure 1-1. Local version control diagram.
+<figure id="figure1-1">
+<figcaption>Local version control diagram.</figcaption>
+<img src="figures/18333fig0101-tn.png"/>
+</figure>
 
 One of the more popular VCS tools was a system called rcs, which is still distributed with many computers today. Even the popular Mac OS X operating system includes the rcs command when you install the Developer Tools. This tool basically works by keeping patch sets (that is, the differences between files) from one revision to another in a special format on disk; it can then recreate what any file looked like at any point in time by adding up all the patches.
 
