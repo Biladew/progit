@@ -580,21 +580,21 @@ Table 2-1. Formatting Options for the git log pretty output
 Ì±∞ÌØÄÌ±∞ÌØÄÌ±µ Output
 	Option	| Description of Output
  ------ | --------------------
-	%H	| Commit hash
-	%h	| Abbreviated commit hash
-	%T	| Tree hash
-	%t	| Abbreviated tree hash
-	%P	| Parent hashes
-	%p	| Abbreviated parent hashes
-	%an	| Author name
-	%ae	| Author e-mail
-	%ad	| Author date (format respects the --date= option)
-	%ar	| Author date, relative
-	%cn	| Committer name
-	%ce	| Committer email
-	%cd	| Committer date
-	%cr	| Committer date, relative
-	%s	| Subject
+	%H	    | Commit hash
+	%h	    | Abbreviated commit hash
+	%T	    | Tree hash
+	%t	    | Abbreviated tree hash
+	%P	    | Parent hashes
+	%p	    | Abbreviated parent hashes
+	%an	   | Author name
+	%ae	   | Author e-mail
+	%ad	   | Author date (format respects the --date= option)
+	%ar	   | Author date, relative
+	%cn	   | Committer name
+	%ce	   | Committer email
+	%cd	   | Committer date
+	%cr	   | Committer date, relative
+	%s	    | Subject
 
 Note. You may be wondering what the difference is between _author_ and _committer_. The _author_ is the person who originally wrote the patch, whereas the _committer_ is the person who last applied the patch. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit ‚Äî you as the author and the core member as the committer. We‚Äôll cover this distinction a bit more in *Chapter 5*.
 
@@ -621,14 +621,14 @@ The lines must be formatted as follows
 
 Table 2-2. Common git log Output Formatting Options
 
-	Option	| Description
+	Option	     | Description
  ----------- | -------------
-	-p	| Show the patch introduced with each commit.
+	-p	         | Show the patch introduced with each commit.
 	--word-diff	| Show the patch in a word diff format.
-	--stat	| Show statistics for files modified in each commit.
-	--shortstat	| Display only the changed/insertions/deletions line from the --stat | command.
-	--name-only	| Show the list of files modified after the commit information.
-	--name-status	| Show the list of files affected with added/modified/deleted information as well.
+	--stat	     | Show statistics for files modified in each commit.
+	--shortstat	    | Display only the changed/insertions/deletions line from the --stat command.
+	--name-only	    | Show the list of files modified after the commit information.
+	--name-status	  | Show the list of files affected with added/modified/deleted information as well.
 	--abbrev-commit	| Show only the first few characters of the SHA-1 checksum instead of all 40.
 	--relative-date	| Display the date in a relative format (for example, ‚Äú2 weeks ago‚Äù) instead of using the full date format.
 	--graph	| Display an ASCII graph of the branch and merge history beside the log output.
