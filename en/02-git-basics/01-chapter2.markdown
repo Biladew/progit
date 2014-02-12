@@ -46,8 +46,10 @@ Remember that each file in your working directory can be in one of two states: *
 
 As you edit files, Git sees them as modified, because you‚Äôve changed them since your last commit. You *stage* these modified files and then commit all your staged changes, and the cycle repeats. This lifecycle is illustrated in Figure 2-1.
 
-Insert 18333fig0201.png
-Figure 2-1. The lifecycle of the status of your files.
+<figure>
+ <img src="figures/18333fig0201-tn.png"/>
+	<figcaption>The lifecycle of the status of your files.</figcaption>
+</figure>
 
 ### Checking the Status of Your Files ###
 
@@ -574,24 +576,27 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-	Option	Description of Output
-	%H	Commit hash
-	%h	Abbreviated commit hash
-	%T	Tree hash
-	%t	Abbreviated tree hash
-	%P	Parent hashes
-	%p	Abbreviated parent hashes
-	%an	Author name
-	%ae	Author e-mail
-	%ad	Author date (format respects the --date= option)
-	%ar	Author date, relative
-	%cn	Committer name
-	%ce	Committer email
-	%cd	Committer date
-	%cr	Committer date, relative
-	%s	Subject
+Table 2-1. Formatting Options for the git log pretty output
+Ì±∞ÌØÄÌ±∞ÌØÄÌ±µ Output
+	Option	| Description of Output
+ ------ | --------------------
+	%H	| Commit hash
+	%h	| Abbreviated commit hash
+	%T	| Tree hash
+	%t	| Abbreviated tree hash
+	%P	| Parent hashes
+	%p	| Abbreviated parent hashes
+	%an	| Author name
+	%ae	| Author e-mail
+	%ad	| Author date (format respects the --date= option)
+	%ar	| Author date, relative
+	%cn	| Committer name
+	%ce	| Committer email
+	%cd	| Committer date
+	%cr	| Committer date, relative
+	%s	| Subject
 
-You may be wondering what the difference is between _author_ and _committer_. The _author_ is the person who originally wrote the patch, whereas the _committer_ is the person who last applied the patch. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit ‚Äî you as the author and the core member as the committer. We‚Äôll cover this distinction a bit more in *Chapter 5*.
+**Note**: You may be wondering what the difference is between _author_ and _committer_. The _author_ is the person who originally wrote the patch, whereas the _committer_ is the person who last applied the patch. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit ‚Äî you as the author and the core member as the committer. We‚Äôll cover this distinction a bit more in *Chapter 5*.
 
 The `oneline` and `format` options are particularly useful with another `log` option called `--graph`. This option adds a nice little ASCII graph showing your branch and merge history, which we can see in our copy of the Grit project repository:
 
@@ -614,18 +619,21 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-	Option	Description
-	-p	Show the patch introduced with each commit.
-	--word-diff	Show the patch in a word diff format.
-	--stat	Show statistics for files modified in each commit.
-	--shortstat	Display only the changed/insertions/deletions line from the --stat command.
-	--name-only	Show the list of files modified after the commit information.
-	--name-status	Show the list of files affected with added/modified/deleted information as well.
-	--abbrev-commit	Show only the first few characters of the SHA-1 checksum instead of all 40.
-	--relative-date	Display the date in a relative format (for example, ‚Äú2 weeks ago‚Äù) instead of using the full date format.
-	--graph	Display an ASCII graph of the branch and merge history beside the log output.
-	--pretty	Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format).
-	--oneline	A convenience option short for `--pretty=oneline --abbrev-commit`.
+Table 2-2. Common git log Output Formatting Options
+
+	Option	| Description
+ ----------- | -------------
+	-p	| Show the patch introduced with each commit.
+	--word-diff	| Show the patch in a word diff format.
+	--stat	| Show statistics for files modified in each commit.
+	--shortstat	| Display only the changed/insertions/deletions line from the --stat | command.
+	--name-only	| Show the list of files modified after the commit information.
+	--name-status	| Show the list of files affected with added/modified/deleted information as well.
+	--abbrev-commit	| Show only the first few characters of the SHA-1 checksum instead of all 40.
+	--relative-date	| Display the date in a relative format (for example, ‚Äú2 weeks ago‚Äù) instead of using the full date format.
+	--graph	| Display an ASCII graph of the branch and merge history beside the log output.
+	--pretty	| Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format).
+	--oneline	| A convenience option short for `--pretty=oneline --abbrev-commit`.
 
 ### Limiting Log Output ###
 
@@ -648,12 +656,15 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-	Option	Description
-	-(n)	Show only the last n commits
-	--since, --after	Limit the commits to those made after the specified date.
-	--until, --before	Limit the commits to those made before the specified date.
-	--author	Only show commits in which the author entry matches the specified string.
-	--committer	Only show commits in which the committer entry matches the specified string.
+Table 2-3. Common git log Filtering Options
+
+	Option	| Description
+ ------ | -----------
+	-(n)	| Show only the last n commits
+	--since, --after	| Limit the commits to those made after the specified date.
+	--until, --before	| Limit the commits to those made before the specified date.
+	--author	| Only show commits in which the author entry matches the specified string.
+	--committer	| Only show commits in which the committer entry matches the specified string.
 
 For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and were not merges, you can run something like this:
 
@@ -672,8 +683,10 @@ Of the nearly 20,000 commits in the Git source code history, this command shows 
 
 If you like to use a more graphical tool to visualize your commit history, you may want to take a look at a Tcl/Tk program called `gitk` that is distributed with Git. Gitk is basically a visual `git log` tool, and it accepts nearly all the filtering options that `git log` does. If you type `gitk` on the command line in your project, you should see something like Figure 2-2.
 
-Insert 18333fig0202.png
-Figure 2-2. The gitk history visualizer.
+<figure>
+ <img src="figures/18333fig0202-tn.png"/>
+	<figcaption>The gitk history visualizer.</figcaption>
+</figure>
 
 You can see the commit history in the top half of the window along with a nice ancestry graph. The diff viewer in the bottom half of the window shows you the changes introduced at any commit you click.
 
