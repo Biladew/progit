@@ -576,7 +576,7 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-Table 2-1. Formatting Options for the git log pretty output
+<tableCaption>Formatting Options for the git log pretty output</tableCaption>
 
  Option	| Description of Output
  ------ | --------------------
@@ -619,7 +619,7 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-Table 2-2. Common git log Output Formatting Options
+<tableCaption>Common git log Output Formatting Options</tableCaption>
 
 |Option	         | Description
 |--------------- | -------------
@@ -656,7 +656,7 @@ The lines must be formatted as follows
 <TAB><First column text><TAB><Second column text>
 -->
 
-Table 2-3. Common git log Filtering Options
+<tableCaption>Common git log Filtering Options</tableCaption>
 
 |Option	           | Description
 |----------------- | -----------
