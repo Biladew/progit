@@ -20,7 +20,7 @@
     },
     "html": {
       "index": false,
-      "toc": true,
+      "toc": false,
       "consolidated": true
     }
   },
