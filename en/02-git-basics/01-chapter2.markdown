@@ -571,7 +571,100 @@ The most interesting option is `format`, which allows you to specify your own lo
 
 Table 2-1 lists some of the more useful options that format takes.
 
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
 
+Table 2-1. Formatting Options for the git log pretty output
+
+ Option	| Description of Output
+ ------ | --------------------
+	%H	    | Commit hash
+	%h	    | Abbreviated commit hash
+	%T	    | Tree hash
+	%t	    | Abbreviated tree hash
+	%P	    | Parent hashes
+	%p	    | Abbreviated parent hashes
+	%an	   | Author name
+	%ae	   | Author e-mail
+	%ad	   | Author date (format respects the --date= option)
+	%ar	   | Author date, relative
+	%cn	   | Committer name
+	%ce	   | Committer email
+	%cd	   | Committer date
+	%cr	   | Committer date, relative
+	%s	    | Subject
+
+Note. You may be wondering what the difference is between _author_ and _committer_. The _author_ is the person who originally wrote the patch, whereas the _committer_ is the person who last applied the patch. So, if you send in a patch to a project and one of the core members applies the patch, both of you get credit — you as the author and the core member as the committer. We’ll cover this distinction a bit more in *Chapter 5*.
+
+The `oneline` and `format` options are particularly useful with another `log` option called `--graph`. This option adds a nice little ASCII graph showing your branch and merge history, which we can see in our copy of the Grit project repository:
+
+	$ git log --pretty=format:"%h %s" --graph
+	* 2d3acf9 ignore errors from SIGCHLD on trap
+	*  5e3ee11 Merge branch 'master' of git://github.com/dustin/grit
+	|\
+	| * 420eac9 Added a method for getting the current branch.
+	* | 30e367c timeout code and tests
+	* | 5a09431 add timeout protection to grit
+	* | e1193f8 support for heads with slashes in them
+	|/
+	* d6016bc require time for xmlschema
+	*  11d191e Merge branch 'defunkt' into local
+
+Those are only some simple output-formatting options to `git log` — there are many more. Table 2-2 lists the options we’ve covered so far and some other common formatting options that may be useful, along with how they change the output of the `log` command.
+
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
+
+Table 2-2. Common git log Output Formatting Options
+
+	Option	         | Description
+ --------------- | -------------
+	-p	             | Show the patch introduced with each commit.
+	--word-diff	    | Show the patch in a word diff format.
+	--stat	         | Show statistics for files modified in each commit.
+	--shortstat	    | Display only the changed/insertions/deletions line from the --stat command.
+	--name-only	    | Show the list of files modified after the commit information.
+	--name-status	  | Show the list of files affected with added/modified/deleted information as well.
+	--abbrev-commit	| Show only the first few characters of the SHA-1 checksum instead of all 40.
+	--relative-date	| Display the date in a relative format (for example, “2 weeks ago”) instead of using the full date format.
+	--graph	        | Display an ASCII graph of the branch and merge history beside the log output.
+	--pretty	       | Show commits in an alternate format. Options include oneline, short, full, fuller, and format (where you specify your own format).
+	--oneline	      | A convenience option short for `--pretty=oneline --abbrev-commit`.
+
+### Limiting Log Output ###
+
+In addition to output-formatting options, `git log` takes a number of useful limiting options — that is, options that let you show only a subset of commits. You’ve seen one such option already — the `-2` option, which shows only the last two commits. In fact, you can do `-<n>`, where `n` is any integer to show the last `n` commits. In reality, you’re unlikely to use that often, because Git by default pipes all output through a pager so you see only one page of log output at a time.
+
+However, the time-limiting options such as `--since` and `--until` are very useful. For example, this command gets the list of commits made in the last two weeks:
+
+	$ git log --since=2.weeks
+
+This command works with lots of formats — you can specify a specific date (“2008-01-15”) or a relative date such as “2 years 1 day 3 minutes ago”.
+
+You can also filter the list to commits that match some search criteria. The `--author` option allows you to filter on a specific author, and the `--grep` option lets you search for keywords in the commit messages. (Note that if you want to specify both author and grep options, you have to add `--all-match` or the command will match commits with either.)
+
+The last really useful option to pass to `git log` as a filter is a path. If you specify a directory or file name, you can limit the log output to commits that introduced a change to those files. This is always the last option and is generally preceded by double dashes (`--`) to separate the paths from the options.
+
+In Table 2-3 we’ll list these and a few other common options for your reference.
+
+<!-- Attention to translators: this is a table declaration.
+The lines must be formatted as follows
+<TAB><First column text><TAB><Second column text>
+-->
+
+Table 2-3. Common git log Filtering Options
+
+	Option	           | Description
+ ----------------- | -----------
+	-(n)	             | Show only the last n commits
+	--since, --after	 | Limit the commits to those made after the specified date.
+	--until, --before	| Limit the commits to those made before the specified date.
+	--author	         | Only show commits in which the author entry matches the specified string.
+	--committer	      | Only show commits in which the committer entry matches the specified string.
 
 For example, if you want to see which commits modifying test files in the Git source code history were committed by Junio Hamano in the month of October 2008 and were not merges, you can run something like this:
 
