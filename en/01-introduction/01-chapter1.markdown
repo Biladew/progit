@@ -12,7 +12,7 @@ If you are a graphic or web designer and want to keep every version of an image 
 
 Many people’s version-control method of choice is to copy files into another directory (perhaps a time-stamped directory, if they’re clever). This approach is very common because it is so simple, but it is also incredibly error prone. It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean to.
 
-To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control (see <a data-type="xref" href="#figure1-1"/>).
+To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control (see <a data-type="xref" href="#figure1-1">Figure 1-1</a>).
 
 <figure id="figure1-1">
  <img src="figures/18333fig0101-tn.png"/>
@@ -23,7 +23,7 @@ One of the more popular VCS tools was a system called rcs, which is still distri
 
 ### Centralized Version Control Systems ###
 
-The next major issue that people encounter is that they need to collaborate with developers on other systems. To deal with this problem, Centralized Version Control Systems (CVCSs) were developed. These systems, such as CVS, Subversion, and Perforce, have a single server that contains all the versioned files, and a number of clients that check out files from that central place. For many years, this has been the standard for version control (see <a data-type="xref" href="#figure1-2"/>).
+The next major issue that people encounter is that they need to collaborate with developers on other systems. To deal with this problem, Centralized Version Control Systems (CVCSs) were developed. These systems, such as CVS, Subversion, and Perforce, have a single server that contains all the versioned files, and a number of clients that check out files from that central place. For many years, this has been the standard for version control (see <a data-type="xref" href="#figure1-2">Figure 1-2</a>).
 
 <figure id="figure1-2">
  <img src="figures/18333fig0102-tn.png"/>
@@ -36,7 +36,7 @@ However, this setup also has some serious downsides. The most obvious is the sin
 
 ### Distributed Version Control Systems ###
 
-This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data (see <a data-type="xref" href="#figure1-3"/>).
+This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients don’t just check out the latest snapshot of the files: they fully mirror the repository. Thus if any server dies, and these systems were collaborating via it, any of the client repositories can be copied back up to the server to restore it. Every checkout is really a full backup of all the data (see <a data-type="xref" href="#figure1-3">Figure 1-3</a>).
 
 <figure id="figure1-3">
  <img src="figures/18333fig0103-tn.png"/>
@@ -65,14 +65,14 @@ So, what is Git in a nutshell? This is an important section to absorb, because i
 
 ### Snapshots, Not Differences ###
 
-The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they keep as a set of files and the changes made to each file over time, as illustrated in <a data-type="xref" href="#figure1-4"/>.
+The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about its data. Conceptually, most other systems store information as a list of file-based changes. These systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they keep as a set of files and the changes made to each file over time, as illustrated in <a data-type="xref" href="#figure1-4">Figure 1-4</a>.
 
 <figure id="figure1-4">
  <img src="figures/18333fig0104-tn.png"/>
 	<figcaption>Other systems tend to store data as changes to a base version of each file.</figcaption>
 </figure>
 
-Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a set of snapshots of a mini filesystem. Every time you commit, or save the state of your project in Git, it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again—just a link to the previous identical file it has already stored. Git thinks about its data more like <a data-type="xref" href="#figure1-5"/>.
+Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a set of snapshots of a mini filesystem. Every time you commit, or save the state of your project in Git, it basically takes a picture of what all your files look like at that moment and stores a reference to that snapshot. To be efficient, if files have not changed, Git doesn’t store the file again—just a link to the previous identical file it has already stored. Git thinks about its data more like <a data-type="xref" href="#figure1-5">Figure 1-5</a>.
 
 <figure id="figure1-5">
  <img src="figures/18333fig0105-tn.png"/>
@@ -173,7 +173,7 @@ Or if you’re on a Debian-based distribution like Ubuntu, try apt-get:
 
 ### Installing on Mac ###
 
-There are two easy ways to install Git on a Mac. The easiest is to use the graphical Git installer, which you can download from the Google Code page (see <a data-type="xref" href="#figure1-7"/>):
+There are two easy ways to install Git on a Mac. The easiest is to use the graphical Git installer, which you can download from the Google Code page (see <a data-type="xref" href="#figure1-7">Figure 1-7</a>):
 
 	http://code.google.com/p/git-osx-installer
 
