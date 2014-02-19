@@ -15,7 +15,7 @@ Many people’s version-control method of choice is to copy files into another d
 To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all the changes to files under revision control (see <a data-type="xref" href="#figure1-1">Figure 1-1</a>).
 
 <figure id="figure1-1">
- <img src="figures/18333fig0101-tn.png"/>
+ <img src="../../figures/18333fig0101-tn.png"/>
 	<figcaption>Local version control diagram.</figcaption>
 </figure>
 
