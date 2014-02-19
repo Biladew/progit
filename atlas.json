@@ -5,7 +5,7 @@
   ],
   "formats": {
     "pdf": {
-      "version": false,
+      "version": "print",
       "index": false,
       "toc": false
     },
@@ -24,6 +24,6 @@
       "consolidated": true
     }
   },
-  "theme": "",
+  "theme": "Biladew / pro-git-theme",
   "title": "progit"
 }
