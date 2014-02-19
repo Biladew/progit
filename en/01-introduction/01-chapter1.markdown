@@ -16,7 +16,7 @@ To deal with this issue, programmers long ago developed local VCSs that had a si
 
 <figure id="figure1-1">
 <figcaption>Local version control diagram.</figcaption>
-<img src="figures/18333fig0101-tn.png"/>
+<img src="../../figures/18333fig0101-tn.png"/>
 </figure>
 
 One of the more popular VCS tools was a system called rcs, which is still distributed with many computers today. Even the popular Mac OS X operating system includes the rcs command when you install the Developer Tools. This tool basically works by keeping patch sets (that is, the differences between files) from one revision to another in a special format on disk; it can then recreate what any file looked like at any point in time by adding up all the patches.
